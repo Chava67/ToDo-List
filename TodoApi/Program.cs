@@ -78,11 +78,11 @@ var app = builder.Build();
 
 app.UseCors("AllowAll");
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -138,7 +138,7 @@ app.MapPost("/login", async (LoginDto LoginUser, ToDoDbContext context) =>
 
 
 // Endpoints מוגנים
-
+app.MapGet("/",()=>"server is running");
 // הצגת כל המשימות של המשתמש המחובר
 app.MapGet("/tasks", async (ClaimsPrincipal user, ToDoDbContext context) =>
 {
