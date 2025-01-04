@@ -63,6 +63,7 @@ export default {
 
 
   register: async (userName, mail, password) => {
+    
     console.log("Sending registration data...");
     console.log(mail);
     console.log("Data being sent:", { userName, mail, password });
@@ -76,6 +77,7 @@ export default {
   
   login: async (userName, password, navigate) => {
     try {
+      console.log(process.env.REACT_APP_API_URL)
       const res = await api.post("/login", { userName, password });
       if (res && res.data) {
         saveAccessToken(res.data);  // שמירה על ה-token

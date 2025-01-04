@@ -6,6 +6,7 @@ const api = axios.create({
     headers: {
         "Content-Type": "application/json", // הגדרות כותרות
     },
+    
 });
 
 // הוספת Interceptor ל-Response
