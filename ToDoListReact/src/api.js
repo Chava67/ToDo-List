@@ -2,7 +2,9 @@ import axios from "axios";
 
 // יצירת אינסטנס של Axios עם הגדרות ברירת מחדל
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL||"http://localhost:5147", // כתובת ה-API הבסיסית
+    //baseURL: process.env.REACT_APP_API_URL||"http://localhost:5147", // כתובת ה-API הבסיסית
+    baseURL: "https://todoapi-yjvs.onrender.com", // כתובת ה-API הבסיסית
+
     headers: {
         "Content-Type": "application/json", // הגדרות כותרות
     },
