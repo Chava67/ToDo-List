@@ -1,21 +1,21 @@
 import axios from "axios";
 
 // יצירת אינסטנס של Axios עם הגדרות ברירת מחדל
-const api = axios.create({
-    //baseURL: process.env.REACT_APP_API_URL||"http://localhost:5147", // כתובת ה-API הבסיסית
-    baseURL: "https://todoapi-yjvs.onrender.com", // כתובת ה-API הבסיסית
+// const api = axios.create({
+//     baseURL: process.env.REACT_APP_API_URL,// כתובת ה-API הבסיסית
+   
 
-    headers: {
-        "Content-Type": "application/json", // הגדרות כותרות
-    },
+//     headers: {
+//         "Content-Type": "application/json", // הגדרות כותרות
+//     },
     
-});
+// });
 const apiUrl = process.env.REACT_APP_API_URL;
 axios.defaults.baseURL = "https://"+apiUrl;  // הגדרת baseURL לפי משתנה הסביבה או URL ברירת המחדל
 console.log("API Base URL:", apiUrl);
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 // הוספת Interceptor ל-Response
-api.interceptors.response.use(
+axios.interceptors.response.use(
     (response) => {
         // אם התשובה תקינה, מחזירים אותה כרגיל
         return response;
