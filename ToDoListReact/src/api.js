@@ -10,7 +10,6 @@ const api = axios.create({
     
 });
 console.log(api.baseURL)
-console.log("https://"+process.env.REACT_APP_API_URL);
 // הוספת Interceptor ל-Response
 api.interceptors.response.use(
     (response) => {
