@@ -1,15 +1,20 @@
 import axios from "axios";
 
 // יצירת אינסטנס של Axios עם הגדרות ברירת מחדל
+const URL=process.env.REACT_APP_API_URL;
 const api = axios.create({
-    baseURL: "https://"+process.env.REACT_APP_API_URL,// כתובת ה-API הבסיסית
+    baseURL: "https://"+URL,// כתובת ה-API הבסיסית
     headers: {
         "Content-Type": "application/json", // הגדרות כותרות
     },
     
     
 });
-console.log(api.baseURL)
+console.log("https://"+URL)
+console.log('https://'+URL)
+console.log(URL)
+
+
 // הוספת Interceptor ל-Response
 api.interceptors.response.use(
     (response) => {
