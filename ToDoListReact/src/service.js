@@ -76,9 +76,7 @@ export default {
  
   
   login: async (userName, password, navigate) => {
-    console.log(process.env.REACT_APP_API_URL)
-    console.log('https://'+process.env.REACT_APP_API_URL)
-   
+
     try {
       const res = await api.post("/login", { userName, password });
       if (res && res.data) {

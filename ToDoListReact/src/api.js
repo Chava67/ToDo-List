@@ -10,11 +10,6 @@ const api = axios.create({
     
     
 });
-console.log("https://"+URL)
-console.log('https://'+URL)
-console.log(URL)
-
-
 // הוספת Interceptor ל-Response
 api.interceptors.response.use(
     (response) => {
