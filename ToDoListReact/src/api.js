@@ -10,7 +10,10 @@ const api = axios.create({
     },
     
 });
-
+const apiUrl = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = "https://"+apiUrl;  // הגדרת baseURL לפי משתנה הסביבה או URL ברירת המחדל
+console.log("API Base URL:", apiUrl);
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 // הוספת Interceptor ל-Response
 api.interceptors.response.use(
     (response) => {
