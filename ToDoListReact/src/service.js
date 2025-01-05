@@ -77,7 +77,7 @@ export default {
   
   login: async (userName, password, navigate) => {
     try {
-      console.log(api.getUri)
+      console.log(api.getUri())
       const res = await api.post("/login", { userName, password });
       if (res && res.data) {
         saveAccessToken(res.data);  // שמירה על ה-token
