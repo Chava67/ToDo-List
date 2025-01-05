@@ -78,7 +78,6 @@ export default {
   login: async (userName, password, navigate) => {
     try {
       console.log(api.baseURL)
-      console.log(baseURL)
       console.log(api.baseURL())
       const res = await api.post("/login", { userName, password });
       if (res && res.data) {
