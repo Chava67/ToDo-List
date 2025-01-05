@@ -2,12 +2,7 @@ import axios from "axios";
 
 // יצירת אינסטנס של Axios עם הגדרות ברירת מחדל
 const api = axios.create({
-
-
-
     baseURL: "https://"+process.env.REACT_APP_API_URL,// כתובת ה-API הבסיסית
-   
-
     headers: {
         "Content-Type": "application/json", // הגדרות כותרות
     },
