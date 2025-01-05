@@ -7,8 +7,10 @@ const api = axios.create({
         "Content-Type": "application/json", // הגדרות כותרות
     },
     
+    
 });
-
+console.log(baseURL);
+console.log("https://"+process.env.REACT_APP_API_URL);
 // הוספת Interceptor ל-Response
 api.interceptors.response.use(
     (response) => {
